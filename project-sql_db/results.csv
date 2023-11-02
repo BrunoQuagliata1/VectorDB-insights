@@ -1,0 +1,36 @@
+query,answer1,similarityScore1,answer2,similarityScore2,answer3,similarityScore3,time
+"Tell me the capital of France.","Paris",0.9521601754245173,"Ottawa",0.8683660351332645,"Berlin",0.8604584033458069,48
+"The sky's color is?","Blue",0.963664798525611,"The Milky Way",0.808013240122322,"299,792 kilometers per second",0.8078112410083954,43
+"Largest ocean on Earth?","Pacific Ocean",0.9771171934045381,"The Blue Whale",0.9013332571231915,"Mount Everest",0.8786174523538308,36
+"Who is the author of Romeo and Juliet?","William Shakespeare",0.9731140830142616,"J.K. Rowling",0.8800462050081937,"Hippocrates",0.7994683058668447,45
+"Calculate the square root of 64.","8",0.9591935869843993,"299,792 kilometers per second",0.763712121613524,"384,400 kilometers",0.7551502069725797,36
+"Name the tallest mountain on Earth.","Mount Everest",0.9708264357899533,"Pacific Ocean",0.8494274627771149,"The Blue Whale",0.8395210377494551,34
+"Light travels at what speed?","299,792 kilometers per second",0.936782703772178,"Blue",0.8080107761293384,"100 degrees Celsius",0.797343600884344,37
+"Who is the artist of the Mona Lisa?","Leonardo da Vinci",0.9719049335330067,"J.K. Rowling",0.8011167631646965,"Elon Musk",0.79356704747997,36
+"Longest river in the world is?","The Nile",0.9773856187603098,"Russia",0.8627972029702726,"Pacific Ocean",0.8514366879684607,45
+"'Father of Computers' is known as?","Charles Babbage",0.9692996950058296,"Hippocrates",0.8543036522500549,"Alexander Graham Bell",0.8186213326384122,40
+"Japan's capital?","Tokyo",0.9686741639309696,"Japanese Yen",0.8805787293847815,"Paris",0.8781220903099248,40
+"Chemical formula for water?","H2O",0.945078867071874,"100 degrees Celsius",0.8724514580678407,"0 degrees Celsius",0.8573683407984284,36
+"Who found out about gravity?","Isaac Newton",0.969480755372009,"Alexander Graham Bell",0.8198560787314023,"Charles Babbage",0.8028776287252748,35
+"Hardest natural substance on Earth?","Diamond",0.9795082326080095,"Mount Everest",0.8310874695061015,"Pacific Ocean",0.8284689568985618,39
+"How far is the Moon from Earth?","384,400 kilometers",0.9633490636778408,"Mount Everest",0.8206191048317674,"299,792 kilometers per second",0.8194988467028043,35
+"Who wrote the Harry Potter series?","J.K. Rowling",0.9667978754330331,"William Shakespeare",0.8668052271665508,"Alexander Graham Bell",0.8067607557970654,48
+"Capital city of Italy?","Rome",0.9657416257833971,"Paris",0.8836633521336583,"Tokyo",0.8750719711704914,37
+"Which is the largest planet in our solar system?","Jupiter",0.9928806425218156,"The Blue Whale",0.8550116782027718,"Pacific Ocean",0.8537510949694723,44
+"Who is the 'Father of Medicine'?","Hippocrates",0.981660739208219,"Charles Babbage",0.8523414808573492,"Alexander Graham Bell",0.8070378981681874,36
+"At what temperature does water freeze?","0 degrees Celsius",0.9468016713623939,"100 degrees Celsius",0.9052225647903918,"H2O",0.8174531376234543,35
+"Boiling point of water?","100 degrees Celsius",0.980835396436798,"0 degrees Celsius",0.9309116057276109,"H2O",0.846092801839779,43
+"Capital of Germany?","Berlin",0.9755620524650634,"Paris",0.8826772812114134,"Rome",0.8719464845252568,68
+"Largest country in the world?","Russia",0.9735849078713915,"Vatican City",0.8897222939973327,"The Nile",0.8621717208045897,47
+"Current president of the United States?","Joe Biden",0.9593299689560721,"Bald Eagle",0.8334386969557391,"Elon Musk",0.8316305246656517,40
+"Capital of Canada?","Ottawa",0.9743505305525264,"Paris",0.8858352091846972,"Canberra",0.8852481854143447,67
+"Currency of Japan?","Japanese Yen",0.9738528277891724,"Tokyo",0.8766192304803364,"Cherry Blossom",0.8553196350157163,44
+"Richest person in the world?","Elon Musk",0.9659136883147488,"Russia",0.8266578955615663,"Joe Biden",0.8109083930583543,35
+"Name of our galaxy?","The Milky Way",0.951749432636591,"Jupiter",0.8451306198560559,"Blue",0.8213528455758509,33
+"Highest grossing movie of all time?","Avengers: Endgame",0.9739824711299905,"Elon Musk",0.8134078679862335,"Russia",0.8034390450239378,35
+"Largest animal on Earth?","The Blue Whale",0.983735465278958,"Pacific Ocean",0.8892537871498333,"Mount Everest",0.8662767435310849,32
+"Smallest country in the world?","Vatican City",0.9802582555778779,"Russia",0.8982966607891871,"Mount Everest",0.8290386167088295,40
+"Who invented the telephone?","Alexander Graham Bell",1,"Charles Babbage",0.8357688873372722,"Isaac Newton",0.8289461945632292,37
+"Capital of Australia?","Canberra",0.9764912714585571,"Ottawa",0.8865257154345102,"Tokyo",0.8684203632677603,55
+"National flower of Japan?","Cherry Blossom",0.9796842137833087,"Tokyo",0.8716553795180991,"Japanese Yen",0.8618376976961682,38
+"What is the national bird of the United States?","Bald Eagle",0.9999986539994651,"Cherry Blossom",0.8287549595752522,"Joe Biden",0.8242986824676939,37

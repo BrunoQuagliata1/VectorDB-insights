@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "fs": "^0.0.1-security",
+    "papaparse": "^5.4.1",
+    "vectra": "^0.4.4"
+  },
+  "type": "module"
+}
