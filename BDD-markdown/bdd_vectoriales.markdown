@@ -37,9 +37,17 @@
 ### **Proyecto:**
 - **Proyecto final** 
 
-### **Bibliografía:**
+### **Bibliografía y Referencias:**
 - [Diving into AI: An exploration of embeddings and vector databases](https://atoonk.medium.com/diving-into-ai-an-exploration-of-embeddings-and-vector-databases-a7611c4ec063)
+- [¿Qué es una base de datos vectorial?](https://aws.amazon.com/es/what-is/vector-databases/)
+- [Cosine Similarity vs Euclidean Distance](https://www.baeldung.com/cs/euclidean-distance-vs-cosine-similarity)
 - [Pinecone: Learn Vector Database](https://www.pinecone.io/learn/vector-database/)
+- [Embeddings: OpenAi Documentation](https://platform.openai.com/docs/guides/embeddings)
+- [Modelos de Embedding](https://openai.com/blog/new-and-improved-embedding-model)
+- [Dev Community Article on Vector DBs](https://dev.to/ralphsebastian/best-vector-databases-open-source-wins-again-33n0#:~:text=3,of%20Commercial%20Vector%20Databases)
+- [In Depth Analysis on Vector Database Management Systems](https://ar5iv.labs.arxiv.org/html/2309.11322)
+- [Democratizing Access to Vector Databases](https://thenewstack.io/breaking-barriers-democratizing-access-to-vector-databases/)
+- [Vectra Github Repository](https://github.com/Stevenic/vectra)
 --- 
 
 ## **Elección del tema y organización del trabajo**
@@ -93,6 +101,25 @@ En este trabajo buscaremos explorar en profundidad las bases de datos vectoriale
 #### **Definición y conceptos claves:**
 Las bases de datos vectoriales buscan representar datos como vectores en un espacio multidimensional. Entonces, decimos que un **vector** es una entidad matemática que tiene magnitud y dirección y puede representar muchos datos diferentes, ya sean números, imágenes o texto, todos codificados en un formato numérico. La principal ventaja de utilizar vectores es que nos permiten hacer comparaciones basadas en la proximidad o similitud de su valor. Por ejemplo, dos vectores que apuntan en direcciones similares y tienen magnitudes parecidas en un espacio vectorial serían similares o relacionados.
 
+**Embeddings**
+Un embedding es un vector (lista) de números de punto flotante. La distancia entre dos vectores mide su relación. Una distancia chica nos sugiere una alta relación y una grande sugiere una baja relación.
+
+Imaginemos que tenemos una palabra, a modo de ejemplo diremos 'auto'. Para usarla en un LLM (modelo de lenguaje grande) como GPT, el LLM necesita saber qué significa. Para hacer eso, podemos convertir la palabra 'auto' en un embedding. Un embedding es esencialmente una (serie de) representaciones numéricas de una palabra, indicando su significado. A esto lo llamamos el Vector.
+
+Con los embeddings, ahora podemos representar las palabras como vectores:
+
+perro: [0.2, -0.1, 0.5, …]
+
+gato: [0.1, -0.3, 0.4, …]
+
+pez: [-0.3, 0.6, -0.1, …]
+
+Es importante ver que esto significa una representación del significado (semántica) de la palabra. Por ejemplo, los embeddings de la palabra "perro" y "cachorro" seran representados como vectores que estarían cerca uno del otro en el espacio vectorial porque comparten un significado similar y a menudo aparecen en contextos similares. Por el otro lado, los embeddings de "perro" y "auto" estarían más lejos porque sus significados y contextos son bastante diferentes.
+
+Es esta tecnología de "embeddings de palabras" la que permite la búsqueda semántica, que va más allá de la coincidencia simple de palabras clave para poder lograr entender el significado y contexto detrás de una consulta, lo cual veremos mas adelante en el proyecto. "Semántico" se refiere a la similitud en significado entre palabras o frases.
+
+Por ejemplo, la coincidencia de cadenas tradicional fallaría al conectar la consulta "buscando algo para comer" con la frase "el ratón está buscando comida". Sin embargo, con la búsqueda semántica impulsada por embeddings de palabras, un motor de búsqueda reconoce que ambas frases comparten un significado similar, y encontraría exitosamente la frase.
+
 La **similitud** entre vectores se mide usando métricas comunmente usadas como la distancia euclidiana o la similitud del coseno. Estas métricas nos garantizan una forma cuantitativa de determinar qué tan cerca están dos vectores entre sí, lo que es esencial para tareas como búsquedas de similitud y sistemas de recomendación.
 
 **Similitud de coseno**
@@ -105,11 +132,18 @@ La **similitud** entre vectores se mide usando métricas comunmente usadas como 
 
 
 #### **Estructura y funcionamiento:**
-La información en una base de datos vectorial no se almacena en tablas o collections como en las bases de datos normales. Si no que cada elemento de datos se convierte en un vector y se almacena en un espacio multidimensional. Para hacer esto eficiente, se emplean **técnicas de indexación** especiales, como los árboles de búsqueda en espacio métrico (M-trees) o las estructuras basadas en hash para facilitar hacer búsquedas rápidas y eficientes.
+La información en una base de datos vectorial no se almacena en tablas o collections como en las bases de datos tradicionales. Si no que cada elemento de datos se convierte en un vector y se almacena en un espacio multidimensional. Para hacer esto eficiente, se emplean **técnicas de indexación** especiales, como los árboles de búsqueda en espacio métrico (M-trees) o las estructuras basadas en hash para facilitar hacer búsquedas rápidas y eficientes.
 
 Los **algoritmos típicos** asociados con bases de datos vectoriales son los que permiten convertir datos en vectores (embeddings), algoritmos para medir similitud o distancia entre vectores y algoritmos para la búsqueda rápida de los vecinos más cercanos (NN search).
 
 En términos de **tecnologías asociadas**, existen varias bibliotecas y sistemas diseñados específicamente para gestionar bases de datos vectoriales, como Faiss de Facebook AI o Annoy de Spotify.
+
+#### **Arquitectura de un sistema de bases de datos vectoriales:**
+
+![Alt text](image-10.png)
+
+La imagen ilustra el flujo en una base de datos vectorial mediante una vista simplificada. Los datos se insertan y se convierten en vectores a través de la vectorización. Luego, se indexan en la base de datos para su almacenamiento. Cuando se realiza una consulta, esta también se vectoriza y la base de datos busca el vector correspondiente para devolver los resultados a la aplicación. El diagrama destaca la importancia de la transformación de datos y consultas en vectores para una búsqueda eficiente.
+
 
 #### **Comparación con otras bases de datos:**
 Las bases de datos vectoriales se diferencian en varios aspectos:
@@ -127,7 +161,7 @@ En fin, mientras que otros tipos de bases de datos están diseñados para almace
 
 #### **Casos de uso**:
 
-1. **Sistemas de Recomendación**: apps como Netflix o Spotify usan bases de datos vectoriales para recomendar similar content, se basan en la similitud vectorial entre su contenido, ya sean películas, canciones, etc.
+1. **Sistemas de Recomendación**: apps como Netflix o Spotify usan bases de datos vectoriales para recomendar contenido similar, se basan en la similitud vectorial entre su contenido, ya sean películas, canciones, etc.
 
 2. **Reconocimiento de Imágenes**: Las empresas que ofrecen servicios de imágenes como Google Fotos, hacen uso de bases de datos vectoriales para identificar imágenes que tengan características similares.
 
@@ -161,7 +195,7 @@ En fin, mientras que otros tipos de bases de datos están diseñados para almace
 
 #### **Tecnologías y herramientas asociadas**:
 
-- **Faiss**: Ees una biblioteca para la búsqueda de vecinos más cercanos en grandes conjuntos de datos desarrollada por Facebook,ideal para bases de datos vectoriales.
+- **Faiss**: Es una biblioteca para la búsqueda de vecinos más cercanos en grandes conjuntos de datos desarrollada por Facebook,ideal para bases de datos vectoriales.
 
 - **Annoy (Approximate Nearest Neighbors Oh Yeah)**: Es una biblioteca de Spotify que permite realizar búsquedas de vecinos más cercanos en grandes conjuntos de datos con un equilibrio entre precisión y rendimiento.
 
@@ -190,7 +224,7 @@ En resumen, las bases de datos vectoriales no solo sirven como soluciones para l
 
 #### **Tendencias**:
 
-1. **Integración Profunda con la Cloud**: A medida que las soluciones en la nube se vuelven más comúnes, es probable que veamos una integración más estrecha de bases de datos vectoriales con plataformas de servicios en la nube, permitiendo mayor flexibilidad y escalabilidad.
+1. **Integración Profunda con la Nube**: A medida que las soluciones en la nube se vuelven más comúnes, es probable que veamos una integración más estrecha de bases de datos vectoriales con plataformas de servicios en la nube, permitiendo mayor flexibilidad y escalabilidad.
 
 2. **Uso Extendido en Inteligencia Artificial**: Con la AI convirtiéndose en una parte integral de muchas industrias, la demanda de bases de datos que pueden manejar búsquedas basadas en similitud y otras tareas relacionadas con vectores seguirá creciendo.
 
@@ -245,6 +279,8 @@ En nuestro proyecto, las estructuras de almacenamiento fueron diseñadas de mane
 
 Por otro lado, en Vectra, utilizamos una estructura de almacenamiento diferente. La información se guarda en un archivo local, donde cada ítem tiene metadata asociada que incluye el par 'question' y 'answer', además del vector correspondiente.
 
+![Alt text](image-7.png)
+![Alt text](image-8.png)
 
 #### Preparación de Datos
 
