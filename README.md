@@ -1,5 +1,3 @@
-Of course! Here's a suggested step-by-step guide for your `README.md` file:
-
 ---
 
 ## Setting Up and Running the Project
